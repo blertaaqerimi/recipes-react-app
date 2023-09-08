@@ -8,9 +8,9 @@ const Footer = () => {
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li className="ms-3"><a className="text-body-secondary" href="www.twitter.com"><i class="bi bi-twitter"></i></a></li>
-          <li className="ms-3"><a className="text-body-secondary" href="www.instagram.com"><i class="bi bi-instagram"></i></a></li>
-          <li className="ms-3"><a className="text-body-secondary" href="www.facebook.com"><i class="bi bi-facebook"></i></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.twitter.com"><i className="bi bi-twitter"></i></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.instagram.com"><i className="bi bi-instagram"></i></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.facebook.com"><i className="bi bi-facebook"></i></a></li>
         </ul>
       </footer>
     </div>
