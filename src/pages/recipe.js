@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetch_recipe } from "../api";
+import NutritionWidget from '../components/nutrition-widget'
 const Recipe = () => {
 
   const params = useParams();
@@ -15,26 +16,42 @@ const Recipe = () => {
           setRecipe(data)
         }
       });
-      
+
 
   }, [id])
-    console.log(recipe);
+  console.log(recipe);
   if (!recipe) return null;
   return (
-    <div className="card mb-3" style={{ maxWidth: '540px' }}>
-      <div className="row g-0">
-        <div className="col-md-4">
-          <img src={recipe.image} className="img-fluid rounded-start" alt="..." />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{recipe.title}</h5>
-            <p className="card-text"><div dangerouslySetInnerHTML={{ __html: recipe.summary }} /></p>
-            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+    <div className="d-flex flex-column align-items-center">
+      <img src={recipe.image} alt="..." />
+      <h3>{recipe.title}</h3>
+      <p className="text-center"><div style={{ width: "800px" }} dangerouslySetInnerHTML={{ __html: recipe.summary }} /></p>
+
+      {/* <div id="recipe-details_1-0" className="comp recipe-details mntl-recipe-details">
+        <div className="mntl-recipe-details__content">
+          <div className="mntl-recipe-details__item">
+            <div className="mntl-recipe-details__label">Prep Time:</div>
+            <div className="mntl-recipe-details__value">5 mins</div>
+          </div>
+          <div className="mntl-recipe-details__item">
+            <div className="mntl-recipe-details__label">Cook Time:</div>
+            <div className="mntl-recipe-details__value">20 mins</div>
+          </div>
+          <div className="mntl-recipe-details__item">
+            <div className="mntl-recipe-details__label">Total Time:</div>
+            <div className="mntl-recipe-details__value">25 mins</div>
+          </div>
+          <div className="mntl-recipe-details__item">
+            <div className="mntl-recipe-details__label">Servings:</div>
+            <div className="mntl-recipe-details__value">4 </div>
           </div>
         </div>
-      </div>
+        <div className="loc nutrition-link mntl-recipe-details__nutrition-link-container">
+        </div>
+      </div> */}
+      <NutritionWidget />
     </div>
+    
   )
 }
 
