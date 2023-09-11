@@ -1,38 +1,37 @@
-import { useEffect } from "react";
-import { fetch_random_recipes } from '../api'
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
+import { fetch_random_recipes } from '../api';
+import Search from "../components/search";
+import CardRecipe from '../components/card-recipe'
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [searchRecipes, setSearchRecipes] = useState([]);
 
+  const fetchData = async () => {
+    const data = await fetch_random_recipes();
+    if (data) {
+      setRecipes(data.recipes);
+    }
+  }
 
   useEffect(() => {
-    fetch_random_recipes()
-      .then((data) => {
-        if (data != null) {
-          setRecipes(data.recipes)
-        }
-      })
-  }, [])
-  console.log(recipes)
+    fetchData();
+  }, []);
+
+  const initialOrSearch = searchRecipes.length > 0 ? searchRecipes : recipes;
+
   return (
-    <div>
-      {recipes.length > 0 && recipes.map((recipe, idx) => {
-        return (
-          <div key={idx} className="card" style={{width: '18rem'}}>
-            <img src={recipe.image} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{recipe.title}</h5>
-                <p className="card-text">Type dish: {recipe.dishTypes[0]}</p>
-                <ul className="card-text">{recipe.diets.map((d) => { 
-                  return <li>{d}</li>})}</ul>
-                <NavLink to={`/recipe/${recipe.id}`} className="btn btn-primary">Recipe</NavLink>
-              </div>
-          </div>
-        )
-      })}
-    </div>
+    <>
+      <Search setSearchRecipes={setSearchRecipes} />
+      <div className="d-flex justify-content-evenly flex-wrap mx-3">
+        {initialOrSearch.length > 0 &&
+          initialOrSearch.map((recipe, idx) => (
+            <CardRecipe key={idx} recipe={recipe} />)
+          )}
+      </div>
+
+    </>
   )
 }
 
