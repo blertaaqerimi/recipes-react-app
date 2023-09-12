@@ -4,6 +4,7 @@ import { fetch_recipe } from "../api";
 import NutritionWidget from '../components/nutrition-widget'
 import SimilarRecipes from '../components/similar-recipes'
 import IngredientsWidget from '../components/ingredients-widget'
+import EquipmentWidget from '../components/equipment-widget'
 
 const Recipe = () => {
 
@@ -30,6 +31,7 @@ const Recipe = () => {
 
 
       <IngredientsWidget id={id} />
+      <EquipmentWidget id={id} />
       <NutritionWidget id={id} />
       <SimilarRecipes id={id} />
     </div>

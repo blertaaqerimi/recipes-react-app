@@ -36,3 +36,5 @@ export const connect_user = () => api_call({ endpoint: 'users/connect', method: 
 // export const meal_plan_week = (username, start-date) => api_call({endpoint: `mealplanner/${username}/week/${start-date}`})
 
 export const fetch_ingredientsWidget = (id) => api_call({ endpoint: `recipes/${id}/ingredientWidget`, queryString: 'defaultCss=true', textResponse: true })
+
+export const fetch_equipmentWidget = (id) => api_call({ endpoint: `recipes/${id}/equipmentWidget`, queryString: 'defaultCss=true', textResponse: true })
