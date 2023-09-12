@@ -5,6 +5,7 @@ import Recipe from './pages/recipe';
 import Home from './pages/home';
 import Header from './components/header';
 import Footer from './components/footer';
+import Meals from './pages/meals'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/recipes' element={<Recipes />}/>
         <Route path='/recipe/:id' element={<Recipe />}/>
-        {/* <Route path='/' element={<div>home page</div>}/> */}
+        <Route path='/mealplanner' element={<Meals /> }/>
       </Routes>
       <Footer />
     </BrowserRouter>
