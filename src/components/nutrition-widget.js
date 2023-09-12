@@ -13,11 +13,13 @@ const NutritionWidget = ({id}) => {
                 }
             });
     }, [id])
-    
-    console.log(widget);
     if (!widget) return null;
     return (
-        <div dangerouslySetInnerHTML={{ __html: widget }} />
+        <>
+        <h4 className='mt-5'>Nutritional Information</h4>
+            <div dangerouslySetInnerHTML={{ __html: widget }} />
+        </>
+        
     )
 
 };
