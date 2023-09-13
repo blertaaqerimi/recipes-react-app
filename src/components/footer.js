@@ -1,4 +1,4 @@
-
+import {FaFacebook, FaInstagram, FaTwitter} from 'react-icons/fa'
 const Footer = () => {
   return (
     <div className="container">
@@ -8,9 +8,9 @@ const Footer = () => {
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li className="ms-3"><a className="text-body-secondary" href="www.twitter.com"><i className="bi bi-twitter"></i></a></li>
-          <li className="ms-3"><a className="text-body-secondary" href="www.instagram.com"><i className="bi bi-instagram"></i></a></li>
-          <li className="ms-3"><a className="text-body-secondary" href="www.facebook.com"><i className="bi bi-facebook"></i></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.twitter.com"><FaTwitter /></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.instagram.com"><FaInstagram /></a></li>
+          <li className="ms-3"><a className="text-body-secondary" href="www.facebook.com"><FaFacebook /></a></li>
         </ul>
       </footer>
     </div>
