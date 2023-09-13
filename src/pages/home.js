@@ -1,8 +1,10 @@
-
+import RandomRecipes from '../components/random-recipes';
 
 const Home = () => {
   return (
-    <div>homepage</div>
+    <div>
+      <RandomRecipes />
+    </div>
   
   )
 }

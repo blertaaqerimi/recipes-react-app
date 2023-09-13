@@ -26,7 +26,7 @@ const Categories = () => {
     return (
         <div className="list">
             {list.map((cuis) =>
-                <NavLink key={cuis.name} className="cuisine-link" to={`/cuisines/${cuis.name}`}>
+                <NavLink key={cuis.name} className="cuisine-link" to={`/cuisine/${cuis.name}`}>
                     {cuis.icon}
                     <h4>{cuis.name}</h4>
                 </NavLink>

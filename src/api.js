@@ -1,5 +1,5 @@
 
-const api_key = 'ceec9ab3806f45b5a359b837c496dc88';
+const api_key = '9de90e03f8bd4116bffd2d258e3eaab5';
 
 const base_url = 'https://api.spoonacular.com/';
 
@@ -25,13 +25,13 @@ const api_call = async ({
     }
 };
 
-export const fetch_random_recipes = () => api_call({ endpoint: 'recipes/random', queryString: 'number=50' });
+export const fetch_random_recipes = () => api_call({ endpoint: 'recipes/random', queryString: 'number=10' });
 
 export const fetch_recipe = (id) => api_call({ endpoint: `recipes/${id}/information` });
 
 export const fetch_nutritionWidget = (id) => api_call({ endpoint: `recipes/${id}/nutritionWidget`, queryString: 'defaultCss=true', textResponse: true });
 
-export const search_recipes = (input_value) => api_call({ endpoint: 'recipes/complexSearch', queryString: `query=${input_value}` });
+export const search_recipes = (queryString) => api_call({ endpoint: 'recipes/complexSearch', queryString });
 
 export const fetch_similar_recipes = (id) => api_call({ endpoint: `recipes//${id}/similar`, queryString: 'number=4' });
 
