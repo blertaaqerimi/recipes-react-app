@@ -6,6 +6,7 @@ import Home from './pages/home';
 import Header from './components/header';
 import Footer from './components/footer';
 import Meals from './pages/meals'
+import LoginForm from './pages/login';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route path='/recipes' element={<Recipes />}/>
         <Route path='/recipe/:id' element={<Recipe />}/>
         <Route path='/mealplanner' element={<Meals /> }/>
+        <Route path='/connect' element={<LoginForm /> }/>
+
       </Routes>
       <Footer />
     </BrowserRouter>

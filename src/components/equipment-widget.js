@@ -1,7 +1,7 @@
 import { fetch_equipmentWidget } from '../api';
 import { useEffect, useState } from 'react';
 
-const EquipmentWidget = ({id}) => {
+const EquipmentWidget = ({ id }) => {
 
     const [widget, setWidget] = useState(null)
 
@@ -16,10 +16,10 @@ const EquipmentWidget = ({id}) => {
     if (!widget) return null;
     return (
         <>
-        <h4 className='mt-5'>Equipment</h4>
+            <h4 className='mt-5'>Equipment</h4>
             <div dangerouslySetInnerHTML={{ __html: widget }} />
         </>
-        
+
     )
 
 };

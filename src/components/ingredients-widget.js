@@ -1,7 +1,7 @@
 import { fetch_ingredientsWidget } from '../api';
 import { useEffect, useState } from 'react';
 
-const IngredientsWidget = ({id}) => {
+const IngredientsWidget = ({ id }) => {
 
     const [widget, setWidget] = useState(null)
 
@@ -15,11 +15,11 @@ const IngredientsWidget = ({id}) => {
     }, [id])
     if (!widget) return null;
     return (
-        <>
-        <h4 className='mt-5'>Ingredients</h4>
+        <div className='p-5'>
+            <h4 className='mt-5'>Ingredients</h4>
             <div dangerouslySetInnerHTML={{ __html: widget }} />
-        </>
-        
+        </div>
+
     )
 
 };

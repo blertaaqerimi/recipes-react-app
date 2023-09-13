@@ -5,6 +5,8 @@ const routes = [
   { path: "/", label: "Home" },
   { path: "/recipes", label: "Recipes" },
   { path: "/about", label: "About" },
+  { path: "/connect", label: "Connect", hide: localStorage.getItem('user') },
+
 ];
 
 const Header = () => {
@@ -15,6 +17,7 @@ const Header = () => {
       <header className="d-flex justify-content-center py-3">
         <ul className="nav nav-pills">
           {routes.map((route, index) => (
+            !route?.hide &&
             <li className="nav-item" key={index}>
               <Link
                 to={route.path}
