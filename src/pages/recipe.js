@@ -35,7 +35,7 @@ const Recipe = () => {
       <NutritionWidget id={id} />
       <SimilarRecipes id={id} />
     </div>
-    
+
   )
 }
 

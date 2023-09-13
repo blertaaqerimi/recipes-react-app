@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { connect_user } from '../api'
 import { useNavigate } from "react-router-dom";
 
@@ -14,12 +14,20 @@ const LoginForm = () => {
         navigate('/')
     }
 
-    useEffect(() => {
-        const savedUser = localStorage.getItem('user');
+    // useEffect(() => {
+    //     const savedUser = localStorage.getItem('user');
+    //     if (savedUser) {
+    //         navigate('/meals')
+    //     }
+    // }, [])
+    const savedUser = localStorage.getItem('user');
         if (savedUser) {
-            navigate('/')
+            return (
+                <div>
+                    <h3 className="text-center mt-5">You are already connected!</h3>
+                </div>
+            )
         }
-    }, [])
 
     return (
         <form onSubmit={handleSubmit} style={{ width: '300px', margin: '50px auto' }}>

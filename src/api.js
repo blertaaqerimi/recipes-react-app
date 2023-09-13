@@ -3,15 +3,15 @@ const api_key = '5a5b50d815044ea19e98679624530982';
 
 const base_url = 'https://api.spoonacular.com/';
 
-const api_call = async ({ 
-        method = 'GET',
-        endpoint,
-        queryString,
-        textResponse = false,
-        body = null 
-    }) => {
-        const options = {method};
-        if (body) options.body = JSON.stringify(body);
+const api_call = async ({
+    method = 'GET',
+    endpoint,
+    queryString,
+    textResponse = false,
+    body = null
+}) => {
+    const options = { method };
+    if (body) options.body = JSON.stringify(body);
     try {
         const response = await fetch(`${base_url}${endpoint}?apiKey=${api_key}${queryString ? `&${queryString}` : ""}`, options)
         if (response.status !== 200)
@@ -35,11 +35,12 @@ export const search_recipes = (input_value) => api_call({ endpoint: 'recipes/com
 
 export const fetch_similar_recipes = (id) => api_call({ endpoint: `recipes//${id}/similar`, queryString: 'number=4' });
 
-export const connect_user = (username) => api_call({ endpoint: 'users/connect', method: 'POST', body: { username } });
-
 export const fetch_ingredientsWidget = (id) => api_call({ endpoint: `recipes/${id}/ingredientWidget`, queryString: 'defaultCss=true', textResponse: true });
 
 export const fetch_equipmentWidget = (id) => api_call({ endpoint: `recipes/${id}/equipmentWidget`, queryString: 'defaultCss=true', textResponse: true });
 
-export const meal_plan_week = (username, start_date) => api_call({endpoint: `mealplanner/${username}/week/${start_date}`})
+export const connect_user = (username) => api_call({ endpoint: 'users/connect', method: 'POST', body: { username } });
 
+// export const meal_plan_week = (username, start_date) => api_call({ endpoint: `mealplanner/${username}/week/${start_date}` })
+
+export const generate_meal_plan = () => api_call({endpoint: 'mealplanner/generate', queryString: 'timeFrame=week'})

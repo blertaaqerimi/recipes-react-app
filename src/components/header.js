@@ -6,7 +6,7 @@ const routes = [
   { path: "/recipes", label: "Recipes" },
   { path: "/about", label: "About" },
   { path: "/connect", label: "Connect", hide: localStorage.getItem('user') },
-
+  { path: "/mealplanner",  label: "Meal planner" }
 ];
 
 const Header = () => {
