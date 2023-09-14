@@ -34,29 +34,30 @@ const RandomRecipes = () => {
 
 
   return (
-
-    <Swiper style={{ width: '100%', paddingTop: '50px', paddingBottom: '50px' }}
-      effect={'coverflow'}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={'auto'}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      pagination={true}
-      modules={[EffectCoverflow, Pagination]}
-    >
-      {recipes.length > 0 && recipes.map((recipe, idx) => {
-        return (
-          <SwiperSlide style={{ backgroundPosition: 'center', backgroundSize: 'cover', width: '300px', height: '300px' }} key={idx}><CardRecipe recipe={recipe} /></SwiperSlide>
-        )
-      })}
-    </Swiper>
-
+    <div>
+    <h3 className="px-4">Random Recipes</h3>
+      <Swiper style={{ width: '100%', paddingTop: '50px', paddingBottom: '50px' }}
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+      >
+        {recipes.length > 0 && recipes.map((recipe, idx) => {
+          return (
+            <SwiperSlide style={{ backgroundPosition: 'center', backgroundSize: 'cover', width: '300px', height: '300px' }} key={idx}><CardRecipe recipe={recipe} /></SwiperSlide>
+          )
+        })}
+      </Swiper>
+    </div>
   )
 };
 

@@ -11,12 +11,13 @@ const Recipe = () => {
   const params = useParams();
   const id = params['id'];
 
-  const [recipe, setRecipe] = useState(null)
+  const [recipe, setRecipe] = useState(null);
+  const [activeTab, setActiveTab] = useState('instructions');
 
   useEffect(() => {
     fetch_recipe(id)
       .then((data) => {
-        if (data != null) {
+        if (data) {
           setRecipe(data)
         }
       });
@@ -25,17 +26,33 @@ const Recipe = () => {
   if (!recipe) return null;
   return (
     <div className="d-flex flex-column align-items-center">
+      <div>
+        <button onClick={() => setActiveTab('instructions')}>Instructions</button>
+        <button onClick={() => setActiveTab('ingredients')}>Ingredients</button>
+      </div>
+      <div>{activeTab === 'instructions' ?
+        <div>
+
+        </div>
+        :
+        <div>
+          <ul>
+            {recipe?.extendedIngredients?.length > 0 && recipe.extendedIngredients.map(({ id, original }) => {
+              return <li key={id}>{original}</li>
+            })}
+          </ul>
+          <IngredientsWidget id={id} />
+        </div>
+      }
+      </div>
       <img src={recipe.image} alt="..." />
       <h3>{recipe.title}</h3>
       <p className="text-center"><div style={{ width: "800px" }} dangerouslySetInnerHTML={{ __html: recipe.summary }} /></p>
-
-
-      <IngredientsWidget id={id} />
+      <p><div style={{ width: "800px" }} dangerouslySetInnerHTML={{ __html: recipe.instructions }} /></p>
       <EquipmentWidget id={id} />
       <NutritionWidget id={id} />
       <SimilarRecipes id={id} />
     </div>
-
   )
 }
 

@@ -15,7 +15,6 @@ const Searched = () => {
     };
 
     useEffect(() => {
-        console.log('test')
         fetchData()
     }, [params.inputValue]);
 
