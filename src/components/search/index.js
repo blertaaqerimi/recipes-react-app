@@ -22,7 +22,7 @@ const Search = () => {
                 <input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    className="me-2" type="search" placeholder="Search" aria-label="Search" />
+                    className="me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
             </div>
         </form>
     )

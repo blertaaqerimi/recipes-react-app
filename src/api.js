@@ -1,5 +1,4 @@
-
-const api_key = process.env.API_KEY;
+const api_key = process.env.REACT_APP_API_KEY;
 
 const base_url = 'https://api.spoonacular.com/';
 
