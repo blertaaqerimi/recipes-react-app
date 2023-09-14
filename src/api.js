@@ -1,5 +1,5 @@
 
-const api_key = '9de90e03f8bd4116bffd2d258e3eaab5';
+const api_key = '136d75136cc84eaa89f3599452fff74f';
 
 const base_url = 'https://api.spoonacular.com/';
 
@@ -25,7 +25,7 @@ const api_call = async ({
     }
 };
 
-export const fetch_random_recipes = () => api_call({ endpoint: 'recipes/random', queryString: 'number=10' });
+export const fetch_random_recipes = (number=10) => api_call({ endpoint: 'recipes/random', queryString: `number=${number}` });
 
 export const fetch_recipe = (id) => api_call({ endpoint: `recipes/${id}/information` });
 

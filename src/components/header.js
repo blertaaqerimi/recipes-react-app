@@ -4,9 +4,8 @@ import React from 'react';
 const routes = [
   { path: "/", label: "Home" },
   { path: "/recipes", label: "Recipes" },
-  { path: "/about", label: "About" },
   { path: "/connect", label: "Connect", hide: localStorage.getItem('user') },
-  { path: "/mealplanner",  label: "Meal planner" }
+  { path: "/weekmealplanner", label: "Week meal planner" }
 ];
 
 const Header = () => {
@@ -21,7 +20,7 @@ const Header = () => {
             <li className="nav-item" key={index}>
               <Link
                 to={route.path}
-                className={`nav-link ${location.pathname === route.path ? 'active' : ''}`}
+                className={`nav-link text-black ${location.pathname === route.path ? 'active' : ''}`}
                 aria-current="page"
               >
                 {route.label}

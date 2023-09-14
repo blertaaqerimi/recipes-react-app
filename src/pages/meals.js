@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { generate_meal_plan } from '../api'
 
-const Meals = () => {
+const WeekMeals = () => {
 
     const [responseData, setResponseData] = useState({ week: {} });
 
@@ -17,8 +17,7 @@ const Meals = () => {
         mealPlan();
 
     }, [])
-
-
+    console.log(responseData)
     return (
         <table className='table table-bordered'>
             <thead>
@@ -39,7 +38,7 @@ const Meals = () => {
                             <ul>
                                 {responseData.week[day].meals.map((meal, mealIndex) => (
                                     <li key={mealIndex}>
-                                        <a href={meal.sourceUrl}>{meal.title}</a>
+                                        <a href={`/recipe/${meal.id}`}>{meal.title}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -55,4 +54,4 @@ const Meals = () => {
     )
 };
 
-export default Meals;
+export default WeekMeals;
