@@ -1,5 +1,5 @@
 
-const api_key = 'a28b3b41574c47259ffa9d9398fec337';
+const api_key = process.env.API_KEY;
 
 const base_url = 'https://api.spoonacular.com/';
 
