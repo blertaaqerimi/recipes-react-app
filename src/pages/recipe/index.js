@@ -8,7 +8,6 @@ import EquipmentWidget from '../../components/equipment-widget';
 import "./style.css";
 
 const Recipe = () => {
-
     const params = useParams();
     const id = params['id'];
 
@@ -16,6 +15,7 @@ const Recipe = () => {
     const [activeTab, setActiveTab] = useState('instructions');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetch_recipe(id)
             .then((data) => {
                 if (data) {

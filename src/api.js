@@ -1,5 +1,5 @@
 
-const api_key = '136d75136cc84eaa89f3599452fff74f';
+const api_key = 'a28b3b41574c47259ffa9d9398fec337';
 
 const base_url = 'https://api.spoonacular.com/';
 

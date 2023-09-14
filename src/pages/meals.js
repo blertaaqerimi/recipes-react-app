@@ -43,10 +43,9 @@ const WeekMeals = () => {
                                 ))}
                             </ul>
                         </td>
-                        <td>{responseData.week[day].nutrients.calories}</td>
-                        <td>{responseData.week[day].nutrients.protein}</td>
-                        <td>{responseData.week[day].nutrients.fat}</td>
-                        <td>{responseData.week[day].nutrients.carbohydrates}</td>
+                        {["calories", "protein", "fat", "carbohydrates"]
+                            .map((n, idx) => <td key={idx}>{responseData.week[day].nutrients[n]}</td>)}
+
                     </tr>
                 ))}
             </tbody>

@@ -1,12 +1,17 @@
 import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
 import { GiNoodles, GiChopsticks } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+import { PiCookingPotFill }from "react-icons/pi"
+import { NavLink, useLocation } from "react-router-dom";
 import "./style.css";
 
 const list = [
     {
         name: "Italian",
         icon: <FaPizzaSlice />
+    },
+    {
+        name: "Mediterranean",
+        icon: <PiCookingPotFill />
     },
     {
         name: "American",
@@ -23,6 +28,8 @@ const list = [
 ];
 
 const Categories = () => {
+    const location = useLocation();
+    if (location.pathname.includes("connect")) return null;
     return (
         <div className="list">
             {list.map((cuis) =>

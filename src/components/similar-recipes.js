@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetch_similar_recipes } from '../api'
+import { NavLink } from 'react-router-dom';
 
 const SimilarRecipes = ({ id }) => {
 
@@ -12,17 +13,17 @@ const SimilarRecipes = ({ id }) => {
 
     return (
         <>
-            <h4 className='mt-5'>Related Recipes</h4>
-            {data.length > 0 && <div className='d-flex'>{data.map((r, idx) => {
-                return (
+            <h3 className='my-3'>
+                <span className='border-bottom'>Related Recipes</span>
+            </h3>
+            {data.length > 0 && <div className='d-flex'>{data.map((r, idx) =>  (
                     <div key={idx} className="card mx-2" style={{ width: '18rem' }}>
                         <div className="card-body">
-                            <h5 className="card-title">{r.title}</h5>
-                            <a href={`/recipe/${r.id}`} className="card-link btn btn-primary">Go to recipe</a>
+                        <NavLink className="card-title" to={`/recipe/${r.id}`}>{r.title}</NavLink>
                         </div>
                     </div>
                 )
-            })}</div>}
+            )}</div>}
 
         </>
     );
