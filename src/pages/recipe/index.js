@@ -23,7 +23,6 @@ const Recipe = () => {
                 }
             });
     }, [id])
-    console.log(recipe);
     if (!recipe) return null;
 
     return (

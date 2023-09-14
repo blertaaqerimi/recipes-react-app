@@ -11,7 +11,6 @@ const WeekMeals = () => {
         if (data) {
             setResponseData(data)
         }
-        console.log(data)
     }
 
     useEffect(() => {

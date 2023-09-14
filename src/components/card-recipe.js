@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const CardRecipe = ({ recipe }) => {
-    console.log({ recipe });
     if (!recipe?.image)
         return null
 
